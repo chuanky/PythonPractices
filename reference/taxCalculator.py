@@ -1,5 +1,5 @@
 class TaxCalculator:
-
+    '''税后工资计算器'''
     def __init__(self, salary=0):
         self.salary_levels = [0, 3000, 12000, 25000, 35000, 55000, 80000]
         self.tax_levels = [0.03, 0.1, 0.2, 0.25, 0.3, 0.35, 0.45]
