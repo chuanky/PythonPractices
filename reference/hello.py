@@ -1,3 +1,6 @@
+import sys
+
+
 def acceptInput():
 	msg = ""
 	while msg != "quit":
@@ -8,7 +11,5 @@ def acceptInput():
 def findTaxLevel():
 	tax_levels = [0.03, 0.1]
 	return str(tax_levels[0])
-
-
 
 acceptInput()

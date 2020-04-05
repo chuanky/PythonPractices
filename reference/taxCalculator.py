@@ -17,6 +17,7 @@ class TaxCalculator:
         return self.cum_taxes
 
     def get_tax_level(self):
+        '''获取当前工资所处的税率级别'''
         for i in range(1, len(self.salary_levels)):
             if self.salary > self.salary_levels[i - 1] and self.salary <= self.salary_levels[i]:
                 return i
