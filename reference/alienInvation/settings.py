@@ -11,3 +11,5 @@ class Settings():
         # 飞船的设置
         self.ship_speed_factor = 2
         self.running = True
+        # 图片资源
+        self.playerImgPath = "images/Naruto.png"
