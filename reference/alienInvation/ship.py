@@ -13,7 +13,7 @@ class Ship():
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
         
-        '''TODO: 因为左右移动速度不一样'''
+        '''TODO: 左右移动速度不一样'''
         self.center = float(self.rect.centerx)
 
         # 移动标志
