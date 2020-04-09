@@ -3,16 +3,17 @@ import requests
 import os
 
 
-def store(html_string, path):
+def store(html_string, file_dir, file_name):
     '''保存html到本地'''
-    
+    full_path = file_dir + file_name
     try:
-        file = open(path, 'r')
+        file = open(full_path, 'r')
     except FileNotFoundError:
-        file = open(path, 'w')
+        os.makedirs(os.getcwd() + '/' + file_dir)
+        file = open(full_path, 'w')
         file.write(html_string)
     else:
-        print(path + " exists")
+        print(full_path + " exists")
     finally:
         file.close()
 
@@ -23,8 +24,8 @@ download_dir = 'reference/webCrawler/downloads/'
 r = requests.get(url)
 remote_html = r.text
 soup = BeautifulSoup(remote_html, 'lxml')
-file_path = download_dir + soup.title.text + '.html'
+file_name = soup.title.text + '.html'
 
-store(remote_html, file_path)
+store(remote_html, download_dir, file_name)
     
 
