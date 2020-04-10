@@ -8,18 +8,15 @@ def store(file_data, file_dir, file_name):
     '''保存html到本地'''
 
     full_path = file_dir + file_name
-    try:
-        file = open(full_path, 'r')
-    except FileNotFoundError:
-        # 如果本地不存在自动建立该文件
-        if not os.path.exists(file_dir): 
-            os.makedirs(os.getcwd() + '/' + file_dir)
-        file = open(full_path, 'wb')
-        file.write(file_data)
-    else:
+    if os.path.exists((full_path)):
         print(full_path + " exists")
-    finally:
-        file.close()
+        return
+
+    if not os.path.exists((file_dir)):
+        os.makedirs(os.getcwd() + '/' + file_dir)
+
+    with open(full_path, 'wb') as file:
+        file.write(file_data)
 
 def main(driver):
     html_doc_path = "reference/webCrawler/alice.html"
@@ -49,7 +46,5 @@ def main(driver):
                 print("store failure: " + str(e))
         
     
-driver = webdriver.Safari()
-main(driver)
-driver.close()
-
+with webdriver.Safari() as driver:
+    main(driver)
