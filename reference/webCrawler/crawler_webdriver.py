@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+
 import requests
 import os
+import traceback
 
 
 def store(file_data, file_dir, file_name):
@@ -15,8 +17,11 @@ def store(file_data, file_dir, file_name):
     if not os.path.exists((file_dir)):
         os.makedirs(os.getcwd() + '/' + file_dir)
 
-    with open(full_path, 'wb') as file:
-        file.write(file_data)
+    try:
+        with open(full_path, 'wb') as file:
+            file.write(file_data)
+    except:
+        traceback.print_exc()
 
 def main(driver):
     html_doc_path = "reference/webCrawler/alice.html"
@@ -27,6 +32,8 @@ def main(driver):
     
     file_data = ''
     current_url = ''
+    file_name = '公告'
+    file_ext = '.pdf'
 
     driver.get(url)
 
@@ -40,10 +47,7 @@ def main(driver):
             current_url = driver.current_url
             driver.get(url)
             file_data = requests.get(driver.current_url)
-            try:
-                store(file_data.content, download_dir, "公告.pdf")
-            except Exception as e:
-                print("store failure: " + str(e))
+            store(file_data.content, download_dir, file_name + file_ext)
         
     
 with webdriver.Safari() as driver:
