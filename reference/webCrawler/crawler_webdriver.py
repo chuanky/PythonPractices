@@ -49,6 +49,12 @@ def main(driver):
             file_data = requests.get(driver.current_url)
             store(file_data.content, download_dir, file_name + file_ext)
         
-    
-with webdriver.Safari() as driver:
-    main(driver)
+
+request_url = 'http://www.cninfo.com.cn/new/hisAnnouncement/query'
+
+data = {'stock': '000793,gssz0000793'}
+
+headers = {}
+
+r = requests.post(request_url, data=data)
+

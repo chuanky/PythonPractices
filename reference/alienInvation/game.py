@@ -1,5 +1,6 @@
 import pygame
 import pygame.display
+from pygame.sprite import Group
 
 from settings import Settings
 from ship import Ship
@@ -15,11 +16,13 @@ def run_game():
     pygame.display.set_caption(m_settings.caption)
     # 建立一个飞船对象
     ship = Ship(m_settings, screen)
+    bullets = Group()
     # 开始游戏的主循环
     while m_settings.running:
-        gf.check_event(ship, m_settings)
+        gf.check_event(ship, m_settings, bullets, m_settings, screen)
         ship.update()
-        gf.update_screen(m_settings, screen, ship)
+        bullets.update()
+        gf.update_screen(m_settings, screen, ship, bullets)
 
 
 run_game()

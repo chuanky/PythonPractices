@@ -13,3 +13,8 @@ class Settings():
         self.running = True
         # 图片资源
         self.playerImgPath = "images/Naruto.png"
+
+        self.bullet_speed_factor = 1
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = 60, 60, 60
