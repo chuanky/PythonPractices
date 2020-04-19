@@ -21,9 +21,9 @@ def get_article_content(soup):
         result += p.text + '\n'
     return result
 
-# print('article info: --------------')
-# print(get_article_info(soup, typeTag))
-# print('article content: -----------')
-# print(get_article_content(soup))
+print('article info: --------------')
+print(get_article_info(soup, typeTag))
+print('article content: -----------')
+print(get_article_content(soup))
 
-print(len(soup.find_all('a')))
+# print(len(soup.find_all('a')))
