@@ -8,6 +8,7 @@ mainClock = pygame.time.Clock()
 pygame.init()
 pygame.display.set_caption('game base')
 screen = pygame.display.set_mode((500, 500), 0, 32)
+clicking = False
 
 # a particle is...
 # a thing that exists at a location
@@ -24,8 +25,9 @@ while True:
     # Background --------------------------------------------- #
     screen.fill((0, 0, 0))
     mx, my = pygame.mouse.get_pos()
-    particles.append(
-        [[mx, my], [random.randint(0, 20) / 10 - 1, -2], random.randint(4, 6)])
+    if clicking:
+        particles.append(
+            [[mx, my], [random.randint(0, 20) / 10 - 1, -2], random.randint(4, 6)])
 
     for particle in particles:
         particle[0][0] += particle[1][0]
@@ -39,6 +41,11 @@ while True:
 
     # Buttons ------------------------------------------------ #
     for event in pygame.event.get():
+        if event.type == MOUSEBUTTONDOWN:
+            clicking = True
+        if event.type == MOUSEBUTTONUP:
+            clicking = False
+
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
