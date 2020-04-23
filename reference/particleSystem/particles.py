@@ -46,10 +46,6 @@ while True:
             clicking = True
         if event.type == MOUSEBUTTONUP:
             clicking = False
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
