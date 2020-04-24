@@ -1,36 +1,38 @@
-http://www.globalsecurity.org/ 下载成功
-http://www.examiner.com/ 下载成功
-http://www.defensemedianetwork.com/ 下载成功
-http://www.stratfor.com/ 下载成功
-http://www.stimson.org/ 下载成功
-http://www.uscc.gov/ 下载成功
-http://www.usip.org/ 下载成功
-http://www.rand.org/ 下载成功
-http://www.mei.edu/ 下载成功
-http://www.iiss.org/ 下载成功
-http://www.carnegieendowment.org/ 下载成功
-http://www.cdi.org/ 下载成功
-http://www.afsa.org/ 下载成功
-http://www.americanprogress.org/ 下载成功
-http://www.apcss.org/ 下载成功
-http://www.berkeley.edu/ 下载成功
-http://www.centerforsecuritypolicy.org/ 下载成功
-http://www.defenddemocracy.org/ 下载成功
-http://www.cia.gov/ 下载成功
-http://www.africacenter.org/ 下载成功
-http://www.columbia.edu/ 下载成功
-http://www.ipacademy.org/ 下载成功
-http://www.crisisgroup.org/ 下载成功
-http://www.fas.org/ 下载成功
-http://www.fpa.org/ 下载成功
-http://www.fpri.org/ 下载成功
-http://www.rusi.org/ 下载成功
-http://www.chathamhouse.org/ 下载成功
-http://www.ifri.org/ 下载成功
-http://www.eurasiagroup.net/ 下载成功
-http://www.lowyinstitute.org/ 下载成功
-http://www.ipcs.org/ 下载成功
-http://www.southasiaanalysis.org/ 下载成功
-http://www.newindianexpress.com/ 下载成功
-http://www.sipri.org/ 下载成功
-http://japan.people.com.cn/ 下载成功
+3	http://www.examiner.com/ 下载成功
+6	http://www.defensemedianetwork.com/ 下载成功
+9	http://www.stratfor.com/ 下载成功
+10	http://www.stimson.org/ 下载成功
+12	http://www.uscc.gov/ 下载成功
+13	http://www.usip.org/ 下载成功
+16	http://www.rand.org/ 下载成功
+17	http://www.georgetown.edu/ 下载成功
+18	http://www.mei.edu/ 下载成功
+19	http://www.iiss.org/ 下载成功
+22	http://www.harvard.edu/ 下载成功
+23	http://www.ncafp.org/ 下载成功
+26	http://www.carnegieendowment.org/ 下载成功
+28	http://www.cdi.org/ 下载成功
+29	http://www.afsa.org/ 下载成功
+30	http://www.americanprogress.org/ 下载成功
+31	http://www.apcss.org/ 下载成功
+32	http://www.berkeley.edu/ 下载成功
+33	http://www.carnegieendowment.org/ 下载成功
+35	http://www.centerforsecuritypolicy.org/ 下载成功
+36	http://www.defenddemocracy.org/ 下载成功
+37	http://www.cia.gov/ 下载成功
+42	http://www.africacenter.org/ 下载成功
+43	http://www.columbia.edu/ 下载成功
+44	http://www.ipacademy.org/ 下载成功
+45	http://www.crisisgroup.org/ 下载成功
+48	http://www.harvard.edu/ 下载成功
+50	http://www.fas.org/ 下载成功
+52	http://www.fpa.org/ 下载成功
+55	http://www.fpri.org/ 下载成功
+58	http://www.rusi.org/ 下载成功
+60	http://www.chathamhouse.org/ 下载成功
+65	http://www.eurasiagroup.net/ 下载成功
+67	http://www.lowyinstitute.org/ 下载成功
+69	http://www.ipcs.org/ 下载成功
+71	http://www.newindianexpress.com/ 下载成功
+73	http://www.sipri.org/ 下载成功
+84	http://japan.people.com.cn/ 下载成功

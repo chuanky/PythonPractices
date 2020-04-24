@@ -12,7 +12,7 @@ def fetch_data(tank_db):
     '''从数据库中去信息，存到一个列表中后返回'''
     mycursor = tank_db.cursor()
 
-    sql = "SELECT url from site WHERE tankTag = 1"
+    sql = "SELECT id ,url from site WHERE tankTag = 1"
 
     mycursor.execute(sql)
     results = mycursor.fetchall()
@@ -20,9 +20,9 @@ def fetch_data(tank_db):
     links = []
     sites_without_link = []
     for r in results:
-        if r[0] == None or r[0] == '': continue
+        if r[1] == None or r[1] == '': continue
 
-        links.append(r[0])
+        links.append([r[0], r[1]])
 
     return links
 
@@ -31,7 +31,7 @@ def get_html_head(url):
         'user-agent' : 'Mozilla/5.0'
     }
     try:
-        r = requests.head(url, headers=headers, timeout=30)
+        r = requests.head(url, headers=headers, timeout=10)
         r.raise_for_status()
         r.encoding = r.apparent_encoding
         return r.headers
@@ -60,24 +60,20 @@ def get_html_text(url):
 def main():
     urls = fetch_data(tank_db)
     for url in urls:
-        print("正在检测：" + url)
-        r = get_html_head(url)
+        print("正在检测：" + url[1])
+        r = get_html_head(url[1])
+        title = str(url[0])
+        link = url[1]
         if r:
-            print(url + " 下载成功")
+            print(link + " 下载成功")
             with open('successSites.txt', 'a', encoding='utf-8') as f:
-                f.write(url + " 下载成功\n")
+                f.write(title + '\t' + link + " 下载成功\n")
         else:
             with open('failedSites.txt', 'a', encoding='utf-8') as f:
-                f.write(url + " 下载失败\n")
+                f.write(title + '\t' + link + " 下载失败\n")
 
 
 # urls = fetch_data(tank_db)
 # print(len(urls))
 
-mycursor = tank_db.cursor()
-sql = "SELECT name, url from site WHERE tankTag = 1"
-mycursor.execute(sql)
-
-for r in mycursor.fetchall():
-    if r[1] == None or r[1] == '':
-        print(r)
+main()
