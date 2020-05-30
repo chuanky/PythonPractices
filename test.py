@@ -1,3 +1,4 @@
+'''传奇加了一句话'''
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         if s == None or s == '': return s
