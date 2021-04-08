@@ -1,0 +1,8 @@
+### simple GET
+GET http://localhost:5000/
+
+### GET with parameter
+GET http://localhost:5000/post/1
+
+### POST with parameter
+POST http://localhost:5000/post?post_title=标题
