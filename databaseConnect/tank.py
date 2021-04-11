@@ -1,13 +1,6 @@
 import mysql.connector
 import requests
 
-tank_db = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    passwd = "root",
-    database = "tank20200420"
-)
-
 def fetch_data(tank_db):
     '''从数据库中去信息，存到一个列表中后返回'''
     mycursor = tank_db.cursor()
@@ -57,7 +50,28 @@ def get_html_text(url):
 # print(get_html_head('http://www.harvard.edu/'))
 # print(get_html_head('http://www.usip.org/'))
 
+def init_db():
+    name = 'tank'
+    tank_db = None
+    try:
+        tank_db = mysql.connector.connect(
+            host = "localhost",
+            user = "root",
+            passwd = "root1",
+            database = "tank20200420"
+        )
+    except:
+        print("database connection error: %s" % name)
+        return
+
+    print("database %s initialized" % name)
+    return tank_db
+
 def main():
+    tank_db = init_db()
+    if tank_db == None: 
+        return
+
     urls = fetch_data(tank_db)
     for url in urls:
         print("正在检测：" + url[1])
@@ -72,8 +86,4 @@ def main():
             with open('failedSites.txt', 'a', encoding='utf-8') as f:
                 f.write(title + '\t' + link + " 下载失败\n")
 
-
-# urls = fetch_data(tank_db)
-# print(len(urls))
-
-main()
+init_db()
